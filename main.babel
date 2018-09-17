@@ -20,7 +20,7 @@ class Btn extends React.Component {
 
   handleClick(e) {
 
-    fetch('https://www.botsmart.uk/arrivingtogether/timenow')
+    fetch('http://time.jsontest.com')
       .then(function(response) {
         return response.json();
       })
@@ -28,7 +28,7 @@ class Btn extends React.Component {
         console.log(myJson);
 
       const response_time = (
-         <p>API response Time : {myJson['time']}</p>
+         <p>API response Time : {myJson['time']}</p></br>
       );
 
         ReactDOM.render(response_time, document.getElementById("time"));
@@ -47,8 +47,6 @@ class Btn extends React.Component {
 }
 
 
-
 ReactDOM.render(<Btn />, document.getElementById("reactive"));
 setInterval(tick, 1000);
-
 
